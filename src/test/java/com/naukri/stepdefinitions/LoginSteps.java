@@ -1,5 +1,6 @@
 package com.naukri.stepdefinitions;
 
+import com.naukri.base.BaseTest;
 import com.naukri.pages.LoginPage;
 import com.naukri.utils.ExcelUtils;
 import com.naukri.utils.WebDriverManager;
@@ -17,7 +18,7 @@ import java.io.IOException;
 
 import static com.naukri.utils.StepLogger.*;
 
-public class LoginSteps {
+public class LoginSteps extends BaseTest {
     private WebDriver driver;
     private LoginPage loginPage;
     private String username;
@@ -48,14 +49,11 @@ public class LoginSteps {
 
     @And("I open the Naukri login page")
     public void i_open_the_naukri_login_page() throws Throwable {
-        //startStep();
-        //System.setProperty("webdriver.chrome.driver", "C:\\Frameork Utils\\chromedriver.exe"); // Update with your chromedriver path
-        //driver = new ChromeDriver();
         driver.get("https://www.naukri.com/nlogin/login"); // Naukri login URL
         loginPage = new LoginPage(driver);
         driver.manage().window().maximize(); // Maximize the browser window
         Thread.sleep(3000); // Wait for the page to load
-        //endStep();
+
     }
 
     @When("I enter my credentials and login")
