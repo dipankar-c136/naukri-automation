@@ -37,7 +37,7 @@ jobs:
 
       - name: Send Email Notification
         if: always()
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@v3.11.0
         with:
           server_address: smtp.gmail.com
           server_port: 465
@@ -50,7 +50,8 @@ jobs:
             Hi,
             Your Naukri Resume Automation Job has completed.
 
-            Please check the test report attached (if configured).
+            Please check the test report attached.
 
             Regards,
             GitHub Actions
+          attachments: target/surefire-reports/emailable-report.html
