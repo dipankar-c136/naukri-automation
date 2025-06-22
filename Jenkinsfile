@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://your-repo-url.git' // Replace with your repository URL
+                git 'https://github.com/dipankar-c136/naukri-automation.git' // Replace with your repository URL
             }
         }
 
@@ -33,7 +33,7 @@ pipeline {
 
     post {
         success {
-            mail to: 'your-email@example.com', // Replace with your email
+            mail to: 'dc954725@gmail.com', // Replace with your email
                  subject: "Jenkins Job '${env.JOB_NAME}' Success",
                  body: "The job '${env.JOB_NAME}' completed successfully. Check the console output for details: ${env.RUN_DISPLAY_URL}"
         }
