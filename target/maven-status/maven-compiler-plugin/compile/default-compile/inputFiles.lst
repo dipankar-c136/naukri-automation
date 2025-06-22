@@ -1,5 +1,11 @@
 C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\java\com\naukri\base\BaseTest.java
 C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\java\com\naukri\pages\BasePage.java
+C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\java\com\naukri\pages\HomePage.java
 C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\java\com\naukri\pages\LoginPage.java
+C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\java\com\naukri\pages\ProfilePgae.java
 C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\java\com\naukri\utils\ConfigReader.java
 C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\java\com\naukri\utils\ExcelUtils.java
+C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\java\com\naukri\utils\ExtentCucumberListener.java
+C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\java\com\naukri\utils\ExtentReportManager.java
+C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\java\com\naukri\utils\StepLogger.java
+C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\java\com\naukri\utils\WebDriverManager.java

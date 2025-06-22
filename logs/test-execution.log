@@ -348,3 +348,6 @@ Software Quality Engineer with 3 years of experience in Selenium,Python,Cucumber
 07:45:57.713 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
 07:45:57.745 [main] INFO  com.naukri.pages.BasePage - Resume Headline: Resume headlineeditOneTheme
 Software Quality Engineer with 3 years of experience in Selenium,Python,Cucumber Framework,automation testing,manual testing,functional testing,api testing,regression testing,quality assurance,system testing,agile methodology,QA Automation
+10:35:54.307 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+10:35:54.312 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+10:35:54.312 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels

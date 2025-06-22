@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-14T18:37:05 IST" name="Surefire suite" finished-at="2025-06-14T18:37:29 IST" duration-ms="23926">
+  <suite started-at="2025-06-22T10:35:47 IST" name="Surefire suite" finished-at="2025-06-22T10:36:02 IST" duration-ms="14297">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.naukri.runners.TestRunner@15eb5ee5]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.naukri.runners.TestRunner@41fbdac4]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-06-14T18:37:05 IST" name="Surefire test" finished-at="2025-06-14T18:37:29 IST" duration-ms="23926">
+    <test started-at="2025-06-22T10:35:47 IST" name="Surefire test" finished-at="2025-06-22T10:36:02 IST" duration-ms="14297">
       <class name="com.naukri.runners.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.naukri.runners.TestRunner@15eb5ee5]" started-at="2025-06-14T18:37:05 IST" name="setUpClass" finished-at="2025-06-14T18:37:06 IST" duration-ms="629" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.naukri.runners.TestRunner@41fbdac4]" started-at="2025-06-22T10:35:47 IST" name="setUpClass" finished-at="2025-06-22T10:35:48 IST" duration-ms="995" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@6cd64b3f]]>
+                <![CDATA[org.testng.TestRunner@1537c744]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.naukri.runners.TestRunner@15eb5ee5]" started-at="2025-06-14T18:37:06 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-14T18:37:29 IST" duration-ms="23202" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.naukri.runners.TestRunner@41fbdac4]" started-at="2025-06-22T10:35:48 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-22T10:36:01 IST" duration-ms="12563" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -34,10 +34,52 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.120)
+Build info: version: '4.32.0', revision: 'd17c8aa950'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e5c885d4c6d87473eb07e18445e06700, findElement {using=id, value=usernameField}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.70 (dfa4dc56b2ab..., userDataDir: C:\Users\DIPANKAR\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59602}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59602/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e5c885d4c6d87473eb07e18445e06700]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.120)
+Build info: version: '4.32.0', revision: 'd17c8aa950'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e5c885d4c6d87473eb07e18445e06700, findElement {using=id, value=usernameField}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.70 (dfa4dc56b2ab..., userDataDir: C:\Users\DIPANKAR\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59602}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59602/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e5c885d4c6d87473eb07e18445e06700
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+at com.naukri.pages.LoginPage.enterUsername(LoginPage.java:27)
+at com.naukri.stepdefinitions.LoginSteps.i_enter_my_credentials_and_login(LoginSteps.java:64)
+at ✽.I enter my credentials and login(file:///C:/Users/DIPANKAR/IdeaProjects/Naukri%20Automation/naukri-automation/src/test/resources/features/Login.feature:6)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.naukri.runners.TestRunner@15eb5ee5]" started-at="2025-06-14T18:37:29 IST" name="tearDownClass" finished-at="2025-06-14T18:37:29 IST" duration-ms="48" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.naukri.runners.TestRunner@41fbdac4]" started-at="2025-06-22T10:36:01 IST" name="tearDownClass" finished-at="2025-06-22T10:36:02 IST" duration-ms="681" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

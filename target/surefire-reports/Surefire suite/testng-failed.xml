@@ -6,8 +6,8 @@
       <class name="com.naukri.runners.TestRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="tearDownClass"/>
           <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
         </methods>
       </class> <!-- com.naukri.runners.TestRunner -->
     </classes>

@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jun 22, 2025 07:45:23 am</span></a>
+<a href="#"><span class="badge badge-primary">Jun 22, 2025 10:35:48 am</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -66,7 +71,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -74,25 +79,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">file:///C:/Users/DIPANKAR/IdeaProjects/Naukri%20Automation/naukri-automation/src/test/resources/features/Login.feature</p>
             <p class="text-sm">
-              <span>7:45:57 am</span> / <span>00:00:00:000</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>10:36:01 am</span> / <span>00:00:00:020</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">file:///C:/Users/DIPANKAR/IdeaProjects/Naukri%20Automation/naukri-automation/src/test/resources/features/Login.feature</h5>
-<span class='badge badge-success'>06.22.2025 7:45:57 am</span>
-<span class='badge badge-danger'>06.22.2025 7:45:57 am</span>
-<span class='badge badge-default'>00:00:00:000</span>
+<h5 class="test-status text-fail">file:///C:/Users/DIPANKAR/IdeaProjects/Naukri%20Automation/naukri-automation/src/test/resources/features/Login.feature</h5>
+<span class='badge badge-success'>06.22.2025 10:36:01 am</span>
+<span class='badge badge-danger'>06.22.2025 10:36:01 am</span>
+<span class='badge badge-default'>00:00:00:020</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -104,8 +109,8 @@
         <div class="card-header">
           <div class="card-toolbar node-info">
             <ul class="list-inline d-none d-sm-block">
-              <li><span class="badge pass-bg log ">Pass</span></li>
-              <li><span class='badge badge-default'>30:00:000</span></li>
+              <li><span class="badge fail-bg log ">Fail</span></li>
+              <li><span class='badge badge-default'>30:00:005</span></li>
               <li></li>
             </ul>
           </div>
@@ -139,7 +144,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:45:57 am</td>
+        <td>10:36:01 am</td>
         <td>
           Step Passed
         </td>
@@ -172,7 +177,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:45:57 am</td>
+        <td>10:36:01 am</td>
         <td>
           Step Passed
         </td>
@@ -186,7 +191,7 @@
         <div class="card-header">
           <div class="card-toolbar node-info">
             <ul class="list-inline d-none d-sm-block">
-              <li><span class="badge pass-bg log ">Pass</span></li>
+              <li><span class="badge fail-bg log ">Fail</span></li>
               <li><span class='badge badge-default'>30:00:000</span></li>
               <li></li>
             </ul>
@@ -197,17 +202,44 @@
             </div>
           </div>
         </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
             
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:45:57 am</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:36:01 am</td>
         <td>
-          Step Passed
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.120)
+Build info: version: '4.32.0', revision: 'd17c8aa950'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e5c885d4c6d87473eb07e18445e06700, findElement {using=id, value=usernameField}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.70 (dfa4dc56b2ab..., userDataDir: C:\Users\DIPANKAR\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59602}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59602/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e5c885d4c6d87473eb07e18445e06700
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at com.naukri.pages.LoginPage.enterUsername(LoginPage.java:27)
+	at com.naukri.stepdefinitions.LoginSteps.i_enter_my_credentials_and_login(LoginSteps.java:64)
+	at ✽.I enter my credentials and login(file:///C:/Users/DIPANKAR/IdeaProjects/Naukri%20Automation/naukri-automation/src/test/resources/features/Login.feature:6)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -230,23 +262,6 @@
             </div>
           </div>
         </div>
-        <div class="collapse">
-          <div class="card-body">
-            
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:45:57 am</td>
-        <td>
-          Step Passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-          </div>
-        </div>
       </div>
       <div class="card">
         <div class="card-header">
@@ -261,23 +276,6 @@
             <a class="node " id="7"><span>Then I should see my profile page</span></a>
             <div class="node-attr">
             </div>
-          </div>
-        </div>
-        <div class="collapse">
-          <div class="card-body">
-            
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:45:57 am</td>
-        <td>
-          Step Passed
-        </td>
-      </tr>
-  </tbody>
-</table>
           </div>
         </div>
       </div>
@@ -296,23 +294,6 @@
             </div>
           </div>
         </div>
-        <div class="collapse">
-          <div class="card-body">
-            
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:45:57 am</td>
-        <td>
-          Step Passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-          </div>
-        </div>
       </div>
       <div class="card">
         <div class="card-header">
@@ -327,23 +308,6 @@
             <a class="node " id="9"><span>When I remove the already uploaded resume</span></a>
             <div class="node-attr">
             </div>
-          </div>
-        </div>
-        <div class="collapse">
-          <div class="card-body">
-            
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:45:57 am</td>
-        <td>
-          Step Passed
-        </td>
-      </tr>
-  </tbody>
-</table>
           </div>
         </div>
       </div>
@@ -362,23 +326,6 @@
             </div>
           </div>
         </div>
-        <div class="collapse">
-          <div class="card-body">
-            
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:45:57 am</td>
-        <td>
-          Step Passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-          </div>
-        </div>
       </div>
       <div class="card">
         <div class="card-header">
@@ -393,23 +340,6 @@
             <a class="node " id="11"><span>Then I close the browser</span></a>
             <div class="node-attr">
             </div>
-          </div>
-        </div>
-        <div class="collapse">
-          <div class="card-body">
-            
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:45:57 am</td>
-        <td>
-          Step Passed
-        </td>
-      </tr>
-  </tbody>
-</table>
           </div>
         </div>
       </div>
@@ -428,30 +358,82 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="container-fluid p-4 view dashboard-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchSessionException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchSessionException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>10:36:01 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='5'>When I enter my credentials and login</a>
+<div class="">
+<span class="badge badge-default">file:///C:/Users/DIPANKAR/IdeaProjects/Naukri%20Automation/naukri-automation/src/test/resources/features/Login.feature.Login to Naukri and manage resume.When I enter my credentials and login</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jun 22, 2025 07:45:23 am</h3>
+<h3>Jun 22, 2025 10:35:48 am</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jun 22, 2025 07:45:57 am</h3>
+<h3>Jun 22, 2025 10:36:01 am</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -467,12 +449,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> tests passed
+<div><small data-tooltip='0%'>
+<b>0</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='100%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -490,9 +472,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>1</b> steps passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> steps passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> steps failed,
+<small data-tooltip='100%'><b>1</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -510,9 +492,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>9</b> passed</small></div>
+<div><small data-tooltip='88%'><b>8</b> passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> failed,
+<small data-tooltip='11%'><b>1</b> failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -530,9 +512,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>9</b> events passed</small></div>
+<div><small data-tooltip='66%'><b>2</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
+<small data-tooltip='33%'><b>1</b> events failed,
 <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -549,7 +531,7 @@
 </div></div>
 <script>
 var timeline = {
-"file:///C:/Users/DIPANKAR/IdeaProjects/Naukri%20Automation/naukri-automation/src/test/resources/features/Login.feature":0
+"file:///C:/Users/DIPANKAR/IdeaProjects/Naukri%20Automation/naukri-automation/src/test/resources/features/Login.feature":0.02
 };
 </script>
 <div class="row">
@@ -558,25 +540,25 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
-failParent: 0,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 1,
-failChild: 0,
+passChild: 0,
+failChild: 1,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 9,
-failGrandChild: 0,
+passGrandChild: 8,
+failGrandChild: 1,
 warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 9,
-failEvents: 0,
+passEvents: 2,
+failEvents: 1,
 warningEvents: 0,
 skipEvents: 0,
 infoEvents: 0
