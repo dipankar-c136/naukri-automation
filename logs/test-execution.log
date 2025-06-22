@@ -1,0 +1,350 @@
+21:56:29.376 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+21:56:29.381 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+21:56:29.383 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+21:56:35.929 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+21:56:37.169 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+21:56:38.367 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+21:56:45.394 [main] INFO  com.naukri.pages.BasePage - Static sleep for 5 seconds completed.
+21:56:46.053 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+21:56:46.054 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 645 milliseconds.
+21:56:49.061 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+21:56:49.061 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+21:56:49.098 [main] ERROR com.naukri.pages.BasePage - Home page did not load successfully.
+21:59:51.711 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+21:59:51.716 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+21:59:51.717 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+21:59:57.346 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+21:59:58.485 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+21:59:59.653 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+22:00:06.670 [main] INFO  com.naukri.pages.BasePage - Static sleep for 5 seconds completed.
+22:00:07.330 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+22:00:07.332 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 638 milliseconds.
+22:00:10.333 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+22:00:10.333 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+22:00:10.365 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+22:00:10.380 [main] WARN  com.naukri.pages.BasePage - Profile page is not displayed.
+22:04:54.943 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+22:04:54.949 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+22:04:54.950 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+22:05:00.732 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+22:05:01.946 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+22:05:03.092 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+22:05:10.115 [main] INFO  com.naukri.pages.BasePage - Static sleep for 5 seconds completed.
+22:05:10.928 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+22:05:10.929 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 798 milliseconds.
+22:05:13.941 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+22:05:13.941 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+22:05:13.972 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+22:05:13.988 [main] WARN  com.naukri.pages.BasePage - Profile page is not displayed.
+22:05:15.001 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+22:06:45.525 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+22:06:45.532 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+22:06:45.533 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+22:06:51.536 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+22:06:52.742 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+22:06:53.902 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+22:06:56.933 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+22:06:57.527 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+22:06:57.528 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 574 milliseconds.
+22:07:00.532 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+22:07:00.532 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+22:07:00.564 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+22:07:00.580 [main] WARN  com.naukri.pages.BasePage - Profile page is not displayed.
+22:07:01.602 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+22:07:29.651 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+22:07:29.656 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+22:07:29.658 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+22:07:35.316 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+22:07:36.519 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+22:07:37.631 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+22:07:40.657 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+22:07:41.428 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+22:07:41.428 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 737 milliseconds.
+22:07:44.433 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+22:07:44.433 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+22:07:44.465 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+22:07:44.480 [main] WARN  com.naukri.pages.BasePage - Profile page is not displayed.
+22:07:45.497 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+22:08:43.069 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+22:08:43.074 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+22:08:43.075 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+22:08:48.882 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+22:08:50.012 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+22:08:51.148 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+22:08:54.161 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+22:08:54.980 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+22:08:54.980 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 796 milliseconds.
+22:08:57.993 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+22:08:57.993 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+22:08:58.024 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+22:08:58.088 [main] WARN  com.naukri.pages.BasePage - Profile page is not displayed.
+22:08:59.096 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+22:08:59.190 [main] INFO  com.naukri.pages.BasePage - Resume update button clicked.
+22:09:37.575 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+22:09:37.581 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+22:09:37.582 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+22:09:43.756 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+22:09:44.954 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+22:09:46.105 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+22:09:49.135 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+22:09:49.801 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+22:09:49.802 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 646 milliseconds.
+22:09:52.806 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+22:09:52.806 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+22:09:52.838 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+22:09:52.869 [main] WARN  com.naukri.pages.BasePage - Profile page is not displayed.
+22:09:53.877 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+22:09:53.968 [main] INFO  com.naukri.pages.BasePage - Resume update button clicked.
+22:09:58.972 [main] INFO  com.naukri.pages.BasePage - Static sleep for 5 seconds completed.
+06:32:29.816 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+06:32:29.816 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+06:32:29.816 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+06:32:37.254 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+06:32:38.415 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+06:32:39.552 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+06:32:41.597 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+06:32:41.612 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+06:32:42.633 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+06:32:43.340 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+06:32:43.340 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 692 milliseconds.
+06:32:46.355 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+06:32:46.355 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+06:32:46.393 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+06:32:46.402 [main] WARN  com.naukri.pages.BasePage - Profile page is not displayed.
+06:32:47.414 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+06:32:47.539 [main] INFO  com.naukri.pages.BasePage - Resume update button clicked.
+06:32:52.553 [main] INFO  com.naukri.pages.BasePage - Static sleep for 5 seconds completed.
+06:41:12.422 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+06:41:12.437 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+06:41:12.437 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+06:41:18.700 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+06:41:19.862 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+06:41:20.977 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+06:41:23.018 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+06:41:23.034 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+06:41:24.041 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+06:41:24.672 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+06:41:24.680 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 615 milliseconds.
+06:41:27.688 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+06:41:27.688 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+06:41:27.720 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+06:41:27.720 [main] WARN  com.naukri.pages.BasePage - Profile page is not displayed.
+06:41:28.746 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+06:41:28.848 [main] INFO  com.naukri.pages.BasePage - Resume update button clicked.
+06:41:33.850 [main] INFO  com.naukri.pages.BasePage - Static sleep for 5 seconds completed.
+06:41:42.378 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+06:41:42.386 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+06:41:42.386 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+06:41:48.924 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+06:41:50.080 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+06:41:51.201 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+06:41:53.301 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+06:41:53.331 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+06:41:54.352 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+06:41:55.122 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+06:41:55.122 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 762 milliseconds.
+07:16:53.871 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+07:16:53.876 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+07:16:53.876 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+07:17:01.648 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+07:17:02.785 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+07:17:03.911 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+07:17:06.649 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+07:17:06.678 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+07:17:07.687 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:17:34.110 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+07:17:34.110 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+07:17:34.110 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+07:17:40.937 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+07:17:42.088 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+07:17:43.198 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+07:17:45.466 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+07:17:45.486 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+07:17:46.497 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:19:18.386 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+07:19:18.386 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+07:19:18.386 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+07:19:24.490 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+07:19:25.630 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+07:19:26.738 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+07:19:28.870 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+07:19:28.887 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+07:19:29.894 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:19:30.925 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+07:19:30.933 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 1014 milliseconds.
+07:19:33.937 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+07:19:33.937 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+07:19:34.016 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+07:19:34.032 [main] WARN  com.naukri.pages.BasePage - Profile page is not displayed.
+07:19:35.053 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:19:36.386 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:19:36.444 [main] INFO  com.naukri.pages.BasePage - Resume uploaded from: C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\resources\CV_Dipankar_Chakraborty_2025.pdf
+07:19:38.447 [main] INFO  com.naukri.pages.BasePage - Static sleep for 2 seconds completed.
+07:20:06.115 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+07:20:06.130 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+07:20:06.130 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+07:20:11.815 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+07:20:12.951 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+07:20:14.076 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+07:20:16.113 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+07:20:16.129 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+07:20:17.149 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:20:18.362 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+07:20:18.362 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 1191 milliseconds.
+07:20:21.367 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+07:20:21.367 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+07:20:21.399 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+07:20:21.399 [main] WARN  com.naukri.pages.BasePage - Profile page is not displayed.
+07:20:22.418 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:20:23.724 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:20:23.806 [main] INFO  com.naukri.pages.BasePage - Resume uploaded from: C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\resources\CV_Dipankar_Chakraborty_2025.pdf
+07:20:33.811 [main] INFO  com.naukri.pages.BasePage - Static sleep for 10 seconds completed.
+07:22:10.016 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+07:22:10.021 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+07:22:10.021 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+07:22:54.107 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+07:22:54.107 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+07:22:54.107 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+07:23:00.527 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+07:23:01.669 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+07:23:02.800 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+07:23:04.847 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+07:23:04.893 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+07:23:05.899 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:23:06.704 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+07:23:06.704 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 790 milliseconds.
+07:23:09.727 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+07:23:09.727 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+07:23:09.758 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+07:23:09.774 [main] WARN  com.naukri.pages.BasePage - Profile page is not displayed.
+07:23:10.785 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:23:12.113 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:23:12.204 [main] INFO  com.naukri.pages.BasePage - Resume delete button clicked.
+07:23:14.212 [main] INFO  com.naukri.pages.BasePage - Static sleep for 2 seconds completed.
+07:23:14.212 [main] INFO  com.naukri.pages.BasePage - Waiting for delete confirmation message to appear...
+07:23:14.229 [main] INFO  com.naukri.pages.BasePage - Delete confirmation message: Are you sure you want to delete the resume?
+07:23:14.229 [main] INFO  com.naukri.pages.BasePage - Clicking on delete confirmation button...
+07:23:17.328 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+07:23:18.341 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:23:19.657 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:23:19.715 [main] INFO  com.naukri.pages.BasePage - Resume uploaded from: C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\resources\CV_Dipankar_Chakraborty_2025.pdf
+07:34:10.814 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+07:34:10.833 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+07:34:10.833 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+07:34:16.775 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+07:34:17.905 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+07:34:19.020 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+07:34:21.169 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+07:34:21.216 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+07:34:22.228 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:34:22.900 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+07:34:22.900 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 664 milliseconds.
+07:34:25.919 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+07:34:25.919 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+07:34:25.951 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+07:34:25.951 [main] WARN  com.naukri.pages.BasePage - Profile page is not displayed.
+07:34:26.973 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:34:28.292 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:34:28.388 [main] INFO  com.naukri.pages.BasePage - Resume delete button clicked.
+07:34:30.400 [main] INFO  com.naukri.pages.BasePage - Static sleep for 2 seconds completed.
+07:34:30.400 [main] INFO  com.naukri.pages.BasePage - Waiting for delete confirmation message to appear...
+07:34:30.430 [main] INFO  com.naukri.pages.BasePage - Delete confirmation message: Are you sure you want to delete the resume?
+07:34:30.430 [main] INFO  com.naukri.pages.BasePage - Clicking on delete confirmation button...
+07:34:33.522 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+07:34:34.528 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:34:35.838 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:34:35.877 [main] INFO  com.naukri.pages.BasePage - Resume uploaded from: C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\resources\CV_Dipankar_Chakraborty_2025.pdf
+07:34:40.893 [main] INFO  com.naukri.pages.BasePage - Static sleep for 5 seconds completed.
+07:34:41.900 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:34:41.916 [main] INFO  com.naukri.pages.BasePage - Resume Headline: Resume headlineeditOneTheme
+Software Quality Engineer with 3 years of experience in Selenium,Python,Cucumber Framework,automation testing,manual testing,functional testing,api testing,regression testing,quality assurance,system testing,agile methodology,QA Automation
+07:38:02.835 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+07:38:02.835 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+07:38:02.835 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+07:38:10.219 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+07:38:11.370 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+07:38:12.480 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+07:38:14.620 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+07:38:14.652 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+07:38:15.657 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:38:16.354 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+07:38:16.354 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 674 milliseconds.
+07:38:19.368 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+07:38:19.368 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+07:38:19.399 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+07:38:19.399 [main] WARN  com.naukri.pages.BasePage - Profile page is not displayed.
+07:38:20.420 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:38:21.728 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:38:21.828 [main] INFO  com.naukri.pages.BasePage - Resume delete button clicked.
+07:38:23.829 [main] INFO  com.naukri.pages.BasePage - Static sleep for 2 seconds completed.
+07:38:23.829 [main] INFO  com.naukri.pages.BasePage - Waiting for delete confirmation message to appear...
+07:38:23.845 [main] INFO  com.naukri.pages.BasePage - Delete confirmation message: Are you sure you want to delete the resume?
+07:38:23.845 [main] INFO  com.naukri.pages.BasePage - Clicking on delete confirmation button...
+07:38:26.934 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+07:38:27.940 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:38:29.257 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:38:29.313 [main] INFO  com.naukri.pages.BasePage - Resume uploaded from: C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\resources\CV_Dipankar_Chakraborty_2025.pdf
+07:38:34.319 [main] INFO  com.naukri.pages.BasePage - Static sleep for 5 seconds completed.
+07:38:35.327 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:38:35.358 [main] INFO  com.naukri.pages.BasePage - Resume Headline: Resume headlineeditOneTheme
+Software Quality Engineer with 3 years of experience in Selenium,Python,Cucumber Framework,automation testing,manual testing,functional testing,api testing,regression testing,quality assurance,system testing,agile methodology,QA Automation
+07:44:18.852 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+07:44:18.859 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+07:44:18.859 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+07:44:25.283 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+07:44:26.422 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+07:44:27.528 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+07:44:29.626 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+07:44:29.741 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+07:44:30.755 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:44:31.714 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+07:44:31.714 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 931 milliseconds.
+07:44:34.731 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+07:44:34.731 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+07:44:34.778 [main] INFO  com.naukri.pages.BasePage - Title of current page :::Profile | Mynaukri
+07:44:34.778 [main] WARN  com.naukri.pages.BasePage - Profile page is not displayed.
+07:44:35.798 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:44:37.126 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:44:37.222 [main] INFO  com.naukri.pages.BasePage - Resume delete button clicked.
+07:44:39.234 [main] INFO  com.naukri.pages.BasePage - Static sleep for 2 seconds completed.
+07:44:39.234 [main] INFO  com.naukri.pages.BasePage - Waiting for delete confirmation message to appear...
+07:44:39.249 [main] INFO  com.naukri.pages.BasePage - Delete confirmation message: Are you sure you want to delete the resume?
+07:44:39.249 [main] INFO  com.naukri.pages.BasePage - Clicking on delete confirmation button...
+07:44:42.350 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+07:44:43.359 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:44:44.661 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:44:44.709 [main] INFO  com.naukri.pages.BasePage - Resume uploaded from: C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\resources\CV_Dipankar_Chakraborty_2025.pdf
+07:44:49.722 [main] INFO  com.naukri.pages.BasePage - Static sleep for 5 seconds completed.
+07:44:50.735 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:44:50.767 [main] INFO  com.naukri.pages.BasePage - Resume Headline: Resume headlineeditOneTheme
+Software Quality Engineer with 3 years of experience in Selenium,Python,Cucumber Framework,automation testing,manual testing,functional testing,api testing,regression testing,quality assurance,system testing,agile methodology,QA Automation
+07:45:26.162 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+07:45:26.178 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+07:45:26.178 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+07:45:32.399 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+07:45:33.545 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+07:45:34.641 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+07:45:36.744 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+07:45:36.776 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+07:45:37.791 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:45:38.726 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+07:45:38.731 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 914 milliseconds.
+07:45:41.733 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+07:45:41.733 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+07:45:41.765 [main] INFO  com.naukri.pages.BasePage - Title of current page :::Profile | Mynaukri
+07:45:41.765 [main] WARN  com.naukri.pages.BasePage - Profile page is not displayed.
+07:45:42.784 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:45:44.100 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:45:44.194 [main] INFO  com.naukri.pages.BasePage - Resume delete button clicked.
+07:45:46.196 [main] INFO  com.naukri.pages.BasePage - Static sleep for 2 seconds completed.
+07:45:46.196 [main] INFO  com.naukri.pages.BasePage - Waiting for delete confirmation message to appear...
+07:45:46.226 [main] INFO  com.naukri.pages.BasePage - Delete confirmation message: Are you sure you want to delete the resume?
+07:45:46.226 [main] INFO  com.naukri.pages.BasePage - Clicking on delete confirmation button...
+07:45:49.313 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+07:45:50.327 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:45:51.637 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:45:51.687 [main] INFO  com.naukri.pages.BasePage - Resume uploaded from: C:\Users\DIPANKAR\IdeaProjects\Naukri Automation\naukri-automation\src\main\resources\CV_Dipankar_Chakraborty_2025.pdf
+07:45:56.698 [main] INFO  com.naukri.pages.BasePage - Static sleep for 5 seconds completed.
+07:45:57.713 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+07:45:57.745 [main] INFO  com.naukri.pages.BasePage - Resume Headline: Resume headlineeditOneTheme
+Software Quality Engineer with 3 years of experience in Selenium,Python,Cucumber Framework,automation testing,manual testing,functional testing,api testing,regression testing,quality assurance,system testing,agile methodology,QA Automation
