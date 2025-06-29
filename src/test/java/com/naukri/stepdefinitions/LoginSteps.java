@@ -55,8 +55,8 @@ public class LoginSteps extends BaseTest {
 
         try {
             io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver(options);
-            //driver = new ChromeDriver();
+            //driver = new ChromeDriver(options);
+            driver = new ChromeDriver();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
             driver.manage().window().maximize();
@@ -136,7 +136,7 @@ public class LoginSteps extends BaseTest {
             Thread.sleep(1000);
 
             // Wait for login button
-            wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".btn-primary"))); // adjust selector as needed
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Login']"))); // adjust selector as needed
             loginPage.clickLoginButton();
             Thread.sleep(2000);
         } catch (Exception e) {
