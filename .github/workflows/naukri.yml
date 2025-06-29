@@ -32,11 +32,14 @@ jobs:
       - name: Set up ChromeDriver
         uses: nanasess/setup-chromedriver@v2
 
+      - name: Set CHROMEDRIVER_PATH
+        run: echo "CHROMEDRIVER_PATH=$(which chromedriver)" >> $GITHUB_ENV
+
       - name: Set up Chrome
         uses: browser-actions/setup-chrome@v1
 
       - name: Run Maven Tests
-        run: mvn test
+        run: mvn test -Dwebdriver.chrome.driver=$CHROMEDRIVER_PATH
 
       - name: Send Email Notification
         if: always()
