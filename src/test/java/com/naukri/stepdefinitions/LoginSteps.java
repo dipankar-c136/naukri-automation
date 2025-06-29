@@ -47,7 +47,7 @@ public class LoginSteps extends BaseTest {
 
         try {
             io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
-            //driver = new ChromeDriver(options);
+            driver = new ChromeDriver(options);
             driver = new ChromeDriver();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
