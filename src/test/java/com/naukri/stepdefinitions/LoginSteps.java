@@ -54,7 +54,7 @@ public class LoginSteps extends BaseTest {
 
         // Setup ChromeDriver using WebDriverManager (for local dev)
         io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
         com.naukri.utils.WebDriverManager.setDriver(driver);
