@@ -13,8 +13,8 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-
 import java.io.IOException;
+import java.time.Duration;
 
 import static com.naukri.utils.StepLogger.*;
 
@@ -26,9 +26,20 @@ public class LoginSteps extends BaseTest {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Frameork Utils\\chromedriver.exe");
+        /*System.setProperty("webdriver.chrome.driver", "C:\\Frameork Utils\\chromedriver.exe");
         driver = new ChromeDriver();
-        WebDriverManager.setDriver(driver);
+        WebDriverManager.setDriver(driver);*/
+
+        /*String driverPath = System.getenv("CHROME_DRIVER_PATH");
+        System.setProperty("webdriver.chrome.driver", driverPath);
+        driver = new ChromeDriver();
+        WebDriverManager.setDriver(driver);*/
+
+        io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().window().maximize();
+        com.naukri.utils.WebDriverManager.setDriver(driver);
     }
 
     @Given("I have the Naukri login credentials from the Excel file")
