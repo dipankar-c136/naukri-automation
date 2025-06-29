@@ -42,7 +42,10 @@ jobs:
         run: echo "CHROME_OPTS=--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --user-data-dir=/tmp/chrome-user-data" >> $GITHUB_ENV
 
       - name: Run Maven Tests
-        run: mvn test -Dwebdriver.chrome.driver=$CHROMEDRIVER_PATH
+        run: |
+          TEMP_DIR="/tmp/chrome-$RANDOM-$GITHUB_RUN_ID"
+          mkdir -p $TEMP_DIR
+          mvn test -Dwebdriver.chrome.driver=$CHROMEDRIVER_PATH -Dwebdriver.chrome.userDataDir=$TEMP_DIR
 
       - name: Send Email Notification
         if: always()
