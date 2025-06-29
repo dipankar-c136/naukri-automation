@@ -27,37 +27,35 @@ public class LoginSteps extends BaseTest {
 
     @Before
     public void setUp() {
-        /*System.setProperty("webdriver.chrome.driver", "C:\\Frameork Utils\\chromedriver.exe");
-        driver = new ChromeDriver();
-        WebDriverManager.setDriver(driver);*/
-
-        /*String driverPath = System.getenv("CHROME_DRIVER_PATH");
-        System.setProperty("webdriver.chrome.driver", driverPath);
-        driver = new ChromeDriver();
-        WebDriverManager.setDriver(driver);*/
-
         ChromeOptions options = new ChromeOptions();
-        // Headless mode configuration
+
+        // Basic headless configuration
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");
 
-        // Generate unique user data directory
-        String userDataDir = System.getProperty("java.io.tmpdir") + "chrome-user-data-" + System.currentTimeMillis();
-        options.addArguments("--user-data-dir=" + userDataDir);
-
-        // Additional stability options
-        options.addArguments("--remote-allow-origins=*");
+        // Window and performance settings
         options.addArguments("--window-size=1920,1080");
         options.addArguments("--ignore-certificate-errors");
+        options.addArguments("--remote-allow-origins=*");
 
-        // Setup ChromeDriver using WebDriverManager (for local dev)
-        io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-        com.naukri.utils.WebDriverManager.setDriver(driver);
+        // Additional stability options
+        options.addArguments("--disable-extensions");
+        options.addArguments("--disable-infobars");
+        options.addArguments("--disable-notifications");
+
+        try {
+            io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver(options);
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+            driver.manage().window().maximize();
+            com.naukri.utils.WebDriverManager.setDriver(driver);
+        } catch (Exception e) {
+            System.err.println("Failed to initialize WebDriver: " + e.getMessage());
+            throw e;
+        }
     }
 
     @Given("I have the Naukri login credentials from the Excel file")
