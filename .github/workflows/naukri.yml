@@ -3,7 +3,7 @@ name: Run Naukri Automation Daily
 on:
   schedule:
     - cron: '30 3 * * *'  # 9:00 AM IST
-  workflow_dispatch:      # For manual trigger
+  workflow_dispatch:
 
 jobs:
   build:
@@ -27,7 +27,10 @@ jobs:
           restore-keys: ${{ runner.os }}-maven-
 
       - name: Install Maven Dependencies
-        run: mvn install
+        run: mvn install -DskipTests
+
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
 
       - name: Set up ChromeDriver
         uses: nanasess/setup-chromedriver@v2
@@ -35,11 +38,11 @@ jobs:
       - name: Set CHROMEDRIVER_PATH
         run: echo "CHROMEDRIVER_PATH=$(which chromedriver)" >> $GITHUB_ENV
 
-      - name: Set up Chrome
-        uses: browser-actions/setup-chrome@v1
+      - name: Set Chrome Options
+        run: echo "CHROME_OPTS=--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --user-data-dir=/tmp/chrome-user-data" >> $GITHUB_ENV
 
       - name: Run Maven Tests
-        run: mvn test -Dwebdriver.chrome.driver=$CHROMEDRIVER_PATH
+        run: mvn test -Dwebdriver.chrome.driver=$CHROMEDRIVER_PATH -Dchrome.options="$CHROME_OPTS"
 
       - name: Send Email Notification
         if: always()
@@ -55,9 +58,7 @@ jobs:
           body: |
             Hi,
             Your Naukri Resume Automation Job has completed.
-
             Please check the test report attached.
-
             Regards,
             GitHub Actions
           attachments: target/surefire-reports/emailable-report.html
