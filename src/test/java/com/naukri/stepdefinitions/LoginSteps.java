@@ -15,7 +15,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import java.io.IOException;
 import java.time.Duration;
-
+import org.openqa.selenium.JavascriptExecutor;
+//import org.openqa.selenium.WebDriverWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.OutputType;
+import java.io.File;
+import java.nio.file.Files;
 import static com.naukri.utils.StepLogger.*;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -75,7 +83,7 @@ public class LoginSteps extends BaseTest {
         //endStep();
     }
 
-    @And("I open the Naukri login page")
+    /*@And("I open the Naukri login page")
     public void i_open_the_naukri_login_page() throws Throwable {
         driver.get("https://www.naukri.com/nlogin/login"); // Naukri login URL
         loginPage = new LoginPage(driver);
@@ -95,6 +103,51 @@ public class LoginSteps extends BaseTest {
         Thread.sleep(2000); // Wait for login to complete
         //loginPage.navigateToResumeManagement();
         //endStep();
+    }*/
+
+    @And("I open the Naukri login page")
+    public void i_open_the_naukri_login_page() throws Throwable {
+        driver.get("https://www.naukri.com/nlogin/login");
+        loginPage = new LoginPage(driver);
+        driver.manage().window().maximize();
+
+        // Wait for the page to be fully loaded
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(webDriver -> ((JavascriptExecutor) webDriver)
+                        .executeScript("return document.readyState").equals("complete"));
+
+        // Wait a bit longer to ensure all dynamic content is loaded
+        Thread.sleep(5000);
+    }
+
+    @When("I enter my credentials and login")
+    public void i_enter_my_credentials_and_login() throws Throwable {
+        try {
+            // Wait for username field to be present and visible
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("usernameField")));
+
+            loginPage.enterUsername(username);
+            Thread.sleep(1000);
+
+            // Wait for password field
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("passwordField")));
+            loginPage.enterPassword(password);
+            Thread.sleep(1000);
+
+            // Wait for login button
+            wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".btn-primary"))); // adjust selector as needed
+            loginPage.clickLoginButton();
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            System.err.println("Failed to interact with login form: " + e.getMessage());
+            // Take screenshot for debugging
+            if (driver instanceof TakesScreenshot) {
+                File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+                Files.copy(screenshot.toPath(), new File("login-error-screenshot.png").toPath());
+            }
+            throw e;
+        }
     }
 
     @Then("I remove the uploaded resume")
