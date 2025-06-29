@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 import static com.naukri.utils.StepLogger.*;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class LoginSteps extends BaseTest {
     private WebDriver driver;
@@ -35,6 +36,23 @@ public class LoginSteps extends BaseTest {
         driver = new ChromeDriver();
         WebDriverManager.setDriver(driver);*/
 
+        // Setup ChromeOptions for CI and local runs
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--user-data-dir=/tmp/chrome-user-data");
+
+        // Optionally allow extra args from system property
+        String extraOpts = System.getProperty("chrome.extra.args");
+        if (extraOpts != null && !extraOpts.isEmpty()) {
+            for (String arg : extraOpts.split(" ")) {
+                options.addArguments(arg);
+            }
+        }
+
+        // Setup ChromeDriver using WebDriverManager (for local dev)
         io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
