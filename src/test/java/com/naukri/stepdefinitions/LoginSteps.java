@@ -37,11 +37,20 @@ public class LoginSteps extends BaseTest {
         WebDriverManager.setDriver(driver);*/
 
         ChromeOptions options = new ChromeOptions();
+        // Headless mode configuration
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");
-        options.addArguments("--user-data-dir=/tmp/chrome-user-data");
+
+        // Generate unique user data directory
+        String userDataDir = System.getProperty("java.io.tmpdir") + "chrome-user-data-" + System.currentTimeMillis();
+        options.addArguments("--user-data-dir=" + userDataDir);
+
+        // Additional stability options
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--ignore-certificate-errors");
 
         // Setup ChromeDriver using WebDriverManager (for local dev)
         io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
