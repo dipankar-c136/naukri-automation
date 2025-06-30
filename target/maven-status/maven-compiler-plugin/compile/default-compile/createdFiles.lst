@@ -1,4 +1,11 @@
+com\naukri\utils\StepLogger.class
 com\naukri\utils\ExcelUtils.class
+com\naukri\utils\ExtentCucumberListener.class
+com\naukri\utils\ExtentReportManager.class
 com\naukri\pages\LoginPage.class
+com\naukri\pages\ProfilePgae.class
+com\naukri\pages\BasePage.class
+com\naukri\utils\WebDriverManager.class
+com\naukri\pages\HomePage.class
 com\naukri\utils\ConfigReader.class
 com\naukri\base\BaseTest.class

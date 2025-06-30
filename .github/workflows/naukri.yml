@@ -18,18 +18,26 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
-      - name: Setup Chrome and ChromeDriver
+      - name: Setup Chrome
         uses: browser-actions/setup-chrome@latest
 
-      - name: Run TestNG Tests
+      - name: Run Tests
         run: |
-          mvn clean test -DsuiteXmlFile=src/test/resources/TestNG/testng.xml
+          mvn clean test
         env:
-          SELENIUM_BROWSER: chrome
-          CHROME_OPTIONS: --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu
-          JAVA_OPTS: -Dwebdriver.http.factory=jdk-http-client
+          CHROME_OPTIONS: "--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --window-size=1920,1080"
+          JAVA_TOOL_OPTIONS: "-Dwebdriver.http.factory=jdk-http-client"
 
-      - name: Send Email Notification
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: |
+            target/surefire-reports/
+            target/screenshots/
+
+      - name: Send Email
         if: always()
         uses: dawidd6/action-send-mail@v3.11.0
         with:
@@ -40,5 +48,5 @@ jobs:
           subject: Naukri Automation Result
           to: dc954725@gmail.com
           from: GitHub Action
-          body: Naukri automation test execution completed
+          body: Test execution completed
           attachments: target/surefire-reports/emailable-report.html
