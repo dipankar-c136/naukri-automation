@@ -44,11 +44,10 @@ jobs:
       - name: Run Maven Tests
         run: |
           export DISPLAY=:99
+          sudo chmod -R 777 /tmp
           chromedriver --version
           google-chrome --version
           echo "Using ChromeDriver from: $CHROMEDRIVER_PATH"
-          TEMP_DIR="/tmp/chrome-$RANDOM-$GITHUB_RUN_ID"
-          mkdir -p $TEMP_DIR
           mvn test \
             -Dwebdriver.chrome.driver=$CHROMEDRIVER_PATH \
             -Dwebdriver.chrome.whitelistedIps= \

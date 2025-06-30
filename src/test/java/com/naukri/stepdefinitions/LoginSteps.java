@@ -50,11 +50,6 @@ public class LoginSteps extends BaseTest {
             options.addArguments("--disable-notifications");
             options.addArguments("--disable-extensions");
 
-            // Generate unique user data directory
-            String tempDir = System.getProperty("java.io.tmpdir");
-            String uniqueDir = tempDir + "chrome_" + System.currentTimeMillis();
-            options.addArguments("--user-data-dir=" + uniqueDir);
-
             // CI-specific options
             if (System.getenv("CI") != null) {
                 options.addArguments("--headless=new");
@@ -62,10 +57,28 @@ public class LoginSteps extends BaseTest {
                 options.addArguments("--disable-dev-shm-usage");
                 options.addArguments("--disable-gpu");
                 options.addArguments("--window-size=1920,1080");
+
+                // Create temp directory with full permissions
+                String tempDir = "/tmp/chrome-data-" + System.currentTimeMillis();
+                File chromeDataDir = new File(tempDir);
+                chromeDataDir.mkdirs();
+                chromeDataDir.setReadable(true, false);
+                chromeDataDir.setWritable(true, false);
+                chromeDataDir.setExecutable(true, false);
+                options.addArguments("--user-data-dir=" + tempDir);
             }
 
-            // Set system property for ChromeDriver
+            // Set Chrome binary path in CI environment
+            if (System.getenv("CI") != null) {
+                options.setBinary("/usr/bin/google-chrome");
+            }
+
+            // Set system properties
             System.setProperty("webdriver.http.factory", "jdk-http-client");
+            String chromeDriverPath = System.getenv("CHROMEDRIVER_PATH");
+            if (chromeDriverPath != null && !chromeDriverPath.isEmpty()) {
+                System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+            }
 
             // Initialize driver with options
             driver = new ChromeDriver(options);
