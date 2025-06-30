@@ -44,10 +44,18 @@ public class LoginSteps extends BaseTest {
 
             // Configure Chrome options
             ChromeOptions options = new ChromeOptions();
+
+            // Common options
             options.addArguments("--remote-allow-origins=*");
             options.addArguments("--disable-notifications");
+            options.addArguments("--disable-extensions");
 
-            // Add CI-specific options
+            // Generate unique user data directory
+            String tempDir = System.getProperty("java.io.tmpdir");
+            String uniqueDir = tempDir + "chrome_" + System.currentTimeMillis();
+            options.addArguments("--user-data-dir=" + uniqueDir);
+
+            // CI-specific options
             if (System.getenv("CI") != null) {
                 options.addArguments("--headless=new");
                 options.addArguments("--no-sandbox");
@@ -56,14 +64,11 @@ public class LoginSteps extends BaseTest {
                 options.addArguments("--window-size=1920,1080");
             }
 
-            // Use system properties from CI environment
-            String chromeDriverPath = System.getenv("CHROMEDRIVER_PATH");
-            if (chromeDriverPath != null && !chromeDriverPath.isEmpty()) {
-                System.setProperty("webdriver.chrome.driver", chromeDriverPath);
-            }
+            // Set system property for ChromeDriver
+            System.setProperty("webdriver.http.factory", "jdk-http-client");
 
-            // Initialize driver directly
-            driver = new ChromeDriver();
+            // Initialize driver with options
+            driver = new ChromeDriver(options);
 
             // Configure timeouts and window
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
