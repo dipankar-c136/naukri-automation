@@ -41,19 +41,41 @@ jobs:
       - name: Set Chrome Options
         run: echo "CHROME_OPTS=--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --user-data-dir=/tmp/chrome-user-data" >> $GITHUB_ENV
 
-      - name: Setup Virtual Display
+      - name: Install and Configure Xvfb
         run: |
-          sudo apt-get install -y xvfb
-          Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
+          sudo apt-get update
+          sudo apt-get install -y xvfb x11vnc xterm
+          sudo apt-get install -y xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic
+          Xvfb :99 -ac -screen 0 1920x1080x24 &
+          export DISPLAY=:99
+          sleep 3  # Give Xvfb some time to start
+
+      - name: Verify Xvfb
+        run: |
+          ps aux | grep Xvfb
+          if ! ps aux | grep "[X]vfb"; then
+            echo "Xvfb failed to start"
+            exit 1
+          fi
+
+      - name: Set Environment Variables
+        run: |
           echo "DISPLAY=:99.0" >> $GITHUB_ENV
+          echo "CHROMEDRIVER_PATH=$(which chromedriver)" >> $GITHUB_ENV
+          echo "CHROME_OPTS=--headless=new --no-sandbox --disable-dev-shm-usage" >> $GITHUB_ENV
 
       - name: Run Maven Tests
         run: |
-          xvfb-run --server-args="-screen 0 1920x1080x24" mvn test
+          export DISPLAY=:99.0
+          mvn test \
+            -Dwebdriver.chrome.driver=$CHROMEDRIVER_PATH \
+            -Dwebdriver.chrome.whitelistedIps= \
+            -Dselenium.browser.timeout=60000 \
+            -Dwebdriver.http.factory=jdk-http-client
         env:
-          CHROME_OPTIONS: --no-sandbox --disable-dev-shm-usage --headless=new
-          SELENIUM_BROWSER_TIMEOUT: 60000
           CI: true
+          CHROME_OPTIONS: --no-sandbox --disable-dev-shm-usage --headless=new --disable-gpu
+          SELENIUM_BROWSER_TIMEOUT: 60000
 
       - name: Send Email Notification
         if: always()
