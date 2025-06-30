@@ -35,47 +35,47 @@ public class LoginSteps extends BaseTest {
 
     @Before
     public void setUp() {
-        ChromeOptions options = new ChromeOptions();
-
-        // Check if running in CI environment
-        boolean isCI = System.getenv("CI") != null;
-
-        if (!isCI) {
-            // Local environment settings
-            options.addArguments("--remote-allow-origins=*");
-            options.addArguments("--disable-notifications");
-        } else {
-            // CI environment settings
-            options.addArguments("--headless=new");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--disable-gpu");
-            options.addArguments("--window-size=1920,1080");
-        }
-
         try {
-            // Setup WebDriverManager with specific version
+            // Setup WebDriverManager
             io.github.bonigarcia.wdm.WebDriverManager.chromedriver()
                     .clearDriverCache()
                     .clearResolutionCache()
                     .setup();
 
-            // Set system property to use automatically downloaded driver
-            System.setProperty("webdriver.http.factory", "jdk-http-client");
+            // Configure Chrome options
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--remote-allow-origins=*");
+            options.addArguments("--disable-notifications");
 
-            // Initialize basic ChromeDriver without options for local
-            if (!isCI) {
-                driver = new ChromeDriver();
-            } else {
-                driver = WebDriverManager.getDriver();  // Use your custom WebDriverManager
+            // Add CI-specific options
+            if (System.getenv("CI") != null) {
+                options.addArguments("--headless=new");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-dev-shm-usage");
+                options.addArguments("--disable-gpu");
+                options.addArguments("--window-size=1920,1080");
             }
 
+            // Use system properties from CI environment
+            String chromeDriverPath = System.getenv("CHROMEDRIVER_PATH");
+            if (chromeDriverPath != null && !chromeDriverPath.isEmpty()) {
+                System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+            }
+
+            // Initialize driver directly
+            driver = new ChromeDriver();
+
+            // Configure timeouts and window
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
             driver.manage().window().maximize();
+
+            // Set driver in WebDriverManager
             com.naukri.utils.WebDriverManager.setDriver(driver);
+
         } catch (Exception e) {
             System.err.println("Failed to initialize WebDriver: " + e.getMessage());
+            e.printStackTrace();
             throw e;
         }
     }
