@@ -37,27 +37,40 @@ public class LoginSteps extends BaseTest {
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
 
-        // Basic headless configuration
-        options.addArguments("--headless=new");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--disable-gpu");
+        // Check if running in CI environment
+        boolean isCI = System.getenv("CI") != null;
 
-        // Window and performance settings
-        options.addArguments("--window-size=1920,1080");
-        options.addArguments("--ignore-certificate-errors");
-        options.addArguments("--remote-allow-origins=*");
-
-        // Additional stability options
-        options.addArguments("--disable-extensions");
-        options.addArguments("--disable-infobars");
-        options.addArguments("--disable-notifications");
+        if (!isCI) {
+            // Local environment settings
+            options.addArguments("--remote-allow-origins=*");
+            options.addArguments("--disable-notifications");
+        } else {
+            // CI environment settings
+            options.addArguments("--headless=new");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--window-size=1920,1080");
+        }
 
         try {
-            io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
-            //driver = new ChromeDriver(options);
-            driver = new ChromeDriver();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            // Setup WebDriverManager with specific version
+            io.github.bonigarcia.wdm.WebDriverManager.chromedriver()
+                    .clearDriverCache()
+                    .clearResolutionCache()
+                    .setup();
+
+            // Set system property to use automatically downloaded driver
+            System.setProperty("webdriver.http.factory", "jdk-http-client");
+
+            // Initialize basic ChromeDriver without options for local
+            if (!isCI) {
+                driver = new ChromeDriver();
+            } else {
+                driver = WebDriverManager.getDriver();  // Use your custom WebDriverManager
+            }
+
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
             driver.manage().window().maximize();
             com.naukri.utils.WebDriverManager.setDriver(driver);
