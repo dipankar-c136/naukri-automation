@@ -10,18 +10,15 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import java.io.IOException;
 import java.time.Duration;
-import org.openqa.selenium.JavascriptExecutor;
 //import org.openqa.selenium.WebDriverWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.OutputType;
+
 import java.io.File;
 import java.nio.file.Files;
 import static com.naukri.utils.StepLogger.*;
@@ -138,46 +135,69 @@ public class LoginSteps extends BaseTest {
 
     @And("I open the Naukri login page")
     public void i_open_the_naukri_login_page() throws Throwable {
-        driver.get("https://www.naukri.com/nlogin/login");
-        loginPage = new LoginPage(driver);
-        driver.manage().window().maximize();
+        try {
+            // Open URL with retry mechanism
+            int maxRetries = 3;
+            for (int i = 0; i < maxRetries; i++) {
+                try {
+                    driver.get("https://www.naukri.com/nlogin/login");
+                    break;
+                } catch (Exception e) {
+                    if (i == maxRetries - 1) throw e;
+                    Thread.sleep(2000);
+                }
+            }
 
-        // Wait for the page to be fully loaded
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(webDriver -> ((JavascriptExecutor) webDriver)
-                        .executeScript("return document.readyState").equals("complete"));
+            // Wait for page load
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+            wait.until(webDriver -> ((JavascriptExecutor) webDriver)
+                    .executeScript("return document.readyState").equals("complete"));
 
-        // Wait a bit longer to ensure all dynamic content is loaded
-        Thread.sleep(5000);
+            // Additional wait for dynamic content
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            System.err.println("Failed to load page: " + e.getMessage());
+            takeScreenshot("page-load-error");
+            throw e;
+        }
     }
 
     @When("I enter my credentials and login")
     public void i_enter_my_credentials_and_login() throws Throwable {
         try {
-            // Wait for username field to be present and visible
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+            // Wait and verify login form is visible
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.id("usernameField")));
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("usernameField")));
 
-            loginPage.enterUsername(username);
+            // Use JavaScript to enter credentials
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("document.getElementById('usernameField').value=arguments[0]", username);
+            Thread.sleep(1000);
+            js.executeScript("document.getElementById('passwordField').value=arguments[0]", password);
             Thread.sleep(1000);
 
-            // Wait for password field
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("passwordField")));
-            loginPage.enterPassword(password);
-            Thread.sleep(1000);
+            // Click login using JavaScript
+            WebElement loginBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//button[text()='Login']")));
+            js.executeScript("arguments[0].click();", loginBtn);
 
-            // Wait for login button
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Login']"))); // adjust selector as needed
-            loginPage.clickLoginButton();
-            Thread.sleep(2000);
+            Thread.sleep(3000);
         } catch (Exception e) {
-            System.err.println("Failed to interact with login form: " + e.getMessage());
-            // Take screenshot for debugging
-            if (driver instanceof TakesScreenshot) {
-                File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-                Files.copy(screenshot.toPath(), new File("login-error-screenshot.png").toPath());
-            }
+            System.err.println("Login failed: " + e.getMessage());
+            takeScreenshot("login-error");
             throw e;
+        }
+    }
+
+    private void takeScreenshot(String name) {
+        try {
+            File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            Files.copy(screenshot.toPath(),
+                    new File("target/screenshots/" + name + "-" + System.currentTimeMillis() + ".png").toPath());
+        } catch (Exception e) {
+            System.err.println("Screenshot failed: " + e.getMessage());
         }
     }
 
