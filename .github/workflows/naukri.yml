@@ -6,76 +6,28 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
           java-version: '21'
           distribution: 'temurin'
+          cache: 'maven'
 
-      - name: Cache Maven packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-maven-
+      - name: Setup Chrome and ChromeDriver
+        uses: browser-actions/setup-chrome@latest
 
-      - name: Install Maven Dependencies
-        run: mvn install -DskipTests
-
-      - name: Set up Chrome
-        uses: browser-actions/setup-chrome@v1
-
-      - name: Set up ChromeDriver
-        uses: nanasess/setup-chromedriver@v2
-
-      - name: Set CHROMEDRIVER_PATH
-        run: echo "CHROMEDRIVER_PATH=$(which chromedriver)" >> $GITHUB_ENV
-
-      - name: Set Chrome Options
-        run: echo "CHROME_OPTS=--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --user-data-dir=/tmp/chrome-user-data" >> $GITHUB_ENV
-
-      - name: Install and Configure Xvfb
+      - name: Run TestNG Tests
         run: |
-          sudo apt-get update
-          sudo apt-get install -y xvfb x11vnc xterm
-          sudo apt-get install -y xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic
-          Xvfb :99 -ac -screen 0 1920x1080x24 &
-          export DISPLAY=:99
-          sleep 3  # Give Xvfb some time to start
-
-      - name: Verify Xvfb
-        run: |
-          ps aux | grep Xvfb
-          if ! ps aux | grep "[X]vfb"; then
-            echo "Xvfb failed to start"
-            exit 1
-          fi
-
-      - name: Set Environment Variables
-        run: |
-          echo "DISPLAY=:99.0" >> $GITHUB_ENV
-          echo "CHROMEDRIVER_PATH=$(which chromedriver)" >> $GITHUB_ENV
-          echo "CHROME_OPTS=--headless=new --no-sandbox --disable-dev-shm-usage" >> $GITHUB_ENV
-
-      - name: Run Maven Tests
-        run: |
-          export DISPLAY=:99.0
-          mvn test \
-            -Dwebdriver.chrome.driver=$CHROMEDRIVER_PATH \
-            -Dwebdriver.chrome.whitelistedIps= \
-            -Dselenium.browser.timeout=60000 \
-            -Dwebdriver.http.factory=jdk-http-client
+          mvn clean test -DsuiteXmlFile=src/test/resources/TestNG/testng.xml
         env:
-          CI: true
-          CHROME_OPTIONS: --no-sandbox --disable-dev-shm-usage --headless=new --disable-gpu
-          SELENIUM_BROWSER_TIMEOUT: 60000
+          SELENIUM_BROWSER: chrome
+          CHROME_OPTIONS: --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu
+          JAVA_OPTS: -Dwebdriver.http.factory=jdk-http-client
 
       - name: Send Email Notification
         if: always()
@@ -87,11 +39,6 @@ jobs:
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: Naukri Automation Result
           to: dc954725@gmail.com
-          from: GitHub Action <${{ secrets.EMAIL_USERNAME }}>
-          body: |
-            Hi,
-            Your Naukri Resume Automation Job has completed.
-            Please check the test report attached.
-            Regards,
-            GitHub Actions
+          from: GitHub Action
+          body: Naukri automation test execution completed
           attachments: target/surefire-reports/emailable-report.html
