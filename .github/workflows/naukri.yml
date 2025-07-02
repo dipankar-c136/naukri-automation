@@ -1,6 +1,8 @@
-name: Run Naukri Automation Daily
+name: Naukri Automation CI
 
 on:
+  push:
+    branches: [ "dipankar_infy_0.1" ]
   schedule:
     - cron: '30 3 * * *'  # 9:00 AM IST
   workflow_dispatch:
@@ -8,6 +10,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -16,22 +19,25 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-          cache: 'maven'
+          cache: maven
 
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@latest
 
-      - name: Create Directories
+      - name: Create directories
         run: |
-          mkdir -p target/surefire-reports
-          mkdir -p target/screenshots
+          mkdir -p target/{surefire-reports,screenshots,ExtentReports}
+          mkdir -p logs
 
-      - name: Run Tests
-        run: |
-          mvn clean test -Dwebdriver.chrome.whitelistedIps= -Dselenium.browser.timeout=60000
+      - name: Build and Test
         env:
+          CI: true
           CHROME_OPTIONS: "--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --window-size=1920,1080"
-          JAVA_TOOL_OPTIONS: "-Dwebdriver.http.factory=jdk-http-client"
+        run: |
+          mvn clean test -B \
+          -Dwebdriver.http.factory=jdk-http-client \
+          -Dwebdriver.chrome.whitelistedIps= \
+          -Dselenium.browser.timeout=60000
 
       - name: Upload Test Results
         if: always()
@@ -41,6 +47,9 @@ jobs:
           path: |
             target/surefire-reports/
             target/screenshots/
+            target/ExtentReports/
+            target/ExtentReport.html
+            logs/
           retention-days: 5
 
       - name: Send Email
@@ -51,8 +60,17 @@ jobs:
           server_port: 465
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: Naukri Automation Result
+          subject: Naukri Automation - ${{ job.status }}
           to: dc954725@gmail.com
-          from: GitHub Action
-          body: Test execution completed
-          attachments: target/surefire-reports/emailable-report.html
+          from: GitHub Actions <noreply@github.com>
+          body: |
+            Job ${{ github.job }} completed with status: ${{ job.status }}
+            
+            Repository: ${{ github.repository }}
+            Workflow: ${{ github.workflow }}
+            Run ID: ${{ github.run_id }}
+            
+            See run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          attachments: |
+            target/ExtentReport.html
+            target/surefire-reports/emailable-report.html
