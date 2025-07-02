@@ -10,46 +10,36 @@ import org.testng.annotations.BeforeClass;
 import java.time.Duration;
 
 public class BaseTest {
-    protected static WebDriver driver;
-    protected static WebDriverWait wait;
+    protected WebDriverWait wait;
+
+    protected WebDriver getDriver() {
+        return com.naukri.utils.WebDriverManager.getDriver();
+    }
 
     @BeforeClass
     public void setUp() {
-        if (driver == null) {
+        if (com.naukri.utils.WebDriverManager.getDriver() == null) {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
 
-            // Basic options that work in both local and CI
-            options.addArguments("--remote-allow-origins=*");
-            options.addArguments("--headless=new");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--disable-gpu");
-            options.addArguments("--window-size=1920,1080");
-            options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
-            options.addArguments("--disable-extensions");
-            options.addArguments("--disable-notifications");
-
-            try {
-                driver = new ChromeDriver(options);
-                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-                driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
-                wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-            } catch (Exception e) {
-                System.err.println("Failed to initialize WebDriver: " + e.getMessage());
-                if (driver != null) {
-                    driver.quit();
-                }
-                throw e;
+            if (System.getenv("CI") != null) {
+                options.addArguments("--headless=new");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-dev-shm-usage");
+                options.addArguments("--window-size=1920,1080");
             }
+
+            WebDriver driver = new ChromeDriver(options);
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
+            wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+            com.naukri.utils.WebDriverManager.setDriver(driver);
         }
     }
 
     @AfterClass
     public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-            driver = null;
-        }
+        com.naukri.utils.WebDriverManager.removeDriver();
     }
 }

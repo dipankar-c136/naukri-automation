@@ -35,11 +35,14 @@ public class LoginSteps extends BaseTest {
         driver = new ChromeDriver();
         WebDriverManager.setDriver(driver);*/
 
-        io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
+        /*io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
-        com.naukri.utils.WebDriverManager.setDriver(driver);
+        com.naukri.utils.WebDriverManager.setDriver(driver);*/
+
+        super.setUp(); // Use parent's setUp
+        loginPage = new LoginPage(getDriver());
     }
 
     @Given("I have the Naukri login credentials from the Excel file")
@@ -60,11 +63,14 @@ public class LoginSteps extends BaseTest {
 
     @And("I open the Naukri login page")
     public void i_open_the_naukri_login_page() throws Throwable {
-        driver.get("https://www.naukri.com/nlogin/login"); // Naukri login URL
+        /*driver.get("https://www.naukri.com/nlogin/login"); // Naukri login URL
         loginPage = new LoginPage(driver);
         driver.manage().window().maximize(); // Maximize the browser window
-        Thread.sleep(3000); // Wait for the page to load
+        Thread.sleep(3000); // Wait for the page to load*/
 
+        getDriver().get("https://www.naukri.com/nlogin/login");
+        getDriver().manage().window().maximize();
+        Thread.sleep(3000);
     }
 
     @When("I enter my credentials and login")
@@ -98,11 +104,14 @@ public class LoginSteps extends BaseTest {
 
     @Then("I close the browser")
     public void i_close_the_browser() {
-        driver.quit();
+        if (getDriver() != null) {
+            getDriver().quit();
+        }
     }
 
     @After
     public void tearDown() {
-        WebDriverManager.quitDriver();
+        /*WebDriverManager.quitDriver();*/
+        super.tearDown();
     }
 }
