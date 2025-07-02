@@ -25,27 +25,28 @@ jobs:
         with:
           chrome-version: stable
 
-      - name: Setup Maven
-        run: |
-          mkdir -p ~/.m2
-          echo "<settings><mirrors><mirror><id>central</id><name>central</name><url>https://repo1.maven.org/maven2</url><mirrorOf>*</mirrorOf></mirror></mirrors></settings>" > ~/.m2/settings.xml
-
       - name: Create directories
         run: |
-          mkdir -p target/surefire-reports
-          mkdir -p target/cucumber-reports
-          mkdir -p target/screenshots
+          mkdir -p target/{surefire-reports,cucumber-reports,screenshots}
+
+      - name: Setup virtual display
+        run: |
+          sudo apt-get install -y xvfb
+          Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
+          echo "DISPLAY=:99.0" >> $GITHUB_ENV
 
       - name: Run tests
-        env:
-          CI: true
-          JAVA_OPTS: "-Xmx2048m"
         run: |
-          mvn clean test -B \
+          mvn -B clean test \
             -Dwebdriver.chrome.whitelistedIps="" \
             -Dselenium.browser.timeout=60000 \
             -Dwebdriver.http.factory=jdk-http-client \
-            -Dmaven.test.failure.ignore=true
+            -Dmaven.test.failure.ignore=true \
+            -Dheadless=true
+        env:
+          DISPLAY: :99.0
+          CI: true
+          MAVEN_OPTS: "-Xmx1024m"
 
       - name: Upload test results
         if: always()
@@ -56,7 +57,6 @@ jobs:
             target/surefire-reports/
             target/cucumber-reports/
             target/screenshots/
-            target/ExtentReport.html
           retention-days: 7
       - name: Send Email
         if: always()

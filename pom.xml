@@ -18,6 +18,7 @@
         <webdrivermanager.version>5.6.3</webdrivermanager.version>
         <poi.version>5.2.4</poi.version>
         <suiteXmlFile>src/test/resources/TestNG/testng.xml</suiteXmlFile>
+        <maven.surefire.version>3.2.3</maven.surefire.version>
     </properties>
 
     <dependencies>
@@ -100,12 +101,20 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.1.2</version> <!-- Latest version -->
+                <version>${maven.surefire.version}</version>
                 <configuration>
                     <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/TestRunner.java</include>
                         <include>**/*Runner.java</include>
                     </includes>
                     <systemPropertyVariables>
@@ -113,11 +122,15 @@
                         <selenium.browser.timeout>60000</selenium.browser.timeout>
                         <webdriver.http.factory>jdk-http-client</webdriver.http.factory>
                     </systemPropertyVariables>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
-                    </suiteXmlFiles>
+                    <argLine>
+                        -Xmx1024m
+                        -XX:+HeapDumpOnOutOfMemoryError
+                        -Dfile.encoding=UTF-8
+                    </argLine>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <argLine>-Xmx2048m -XX:MaxPermSize=512m</argLine>
+                    <workingDirectory>${project.build.directory}</workingDirectory>
+                    <forkCount>1</forkCount>
+                    <reuseForks>false</reuseForks>
                 </configuration>
             </plugin>
         </plugins>
