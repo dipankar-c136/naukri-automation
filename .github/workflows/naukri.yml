@@ -32,24 +32,35 @@ jobs:
       - name: Build and Test
         env:
           CI: true
-          CHROME_OPTIONS: "--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --window-size=1920,1080"
+          CHROME_OPTIONS: "--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --window-size=1920,1080 --remote-allow-origins=* --disable-notifications"
+          JAVA_OPTS: "-Dwebdriver.http.factory=jdk-http-client"
         run: |
           mvn clean test -B \
           -Dwebdriver.http.factory=jdk-http-client \
           -Dwebdriver.chrome.whitelistedIps= \
-          -Dselenium.browser.timeout=60000
+          -Dselenium.browser.timeout=60000 \
+          -Dselenium.page.load.timeout=60000 \
+          -Dwebdriver.timeouts.implicitlywait=30000
 
       - name: Upload Test Results
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-results
+          name: test-results-${{ github.run_id }}
           path: |
             target/surefire-reports/
             target/screenshots/
             target/ExtentReports/
             target/ExtentReport.html
             logs/
+          retention-days: 5
+
+      - name: Upload Screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: failure-screenshots-${{ github.run_id }}
+          path: target/screenshots/
           retention-days: 5
 
       - name: Send Email
