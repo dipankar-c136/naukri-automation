@@ -3,7 +3,6 @@ package com.naukri.stepdefinitions;
 import com.naukri.base.BaseTest;
 import com.naukri.pages.LoginPage;
 import com.naukri.utils.ExcelUtils;
-import com.naukri.utils.WebDriverManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -11,12 +10,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import java.io.IOException;
-import java.time.Duration;
-
-import static com.naukri.utils.StepLogger.*;
 
 public class LoginSteps extends BaseTest {
     private WebDriver driver;

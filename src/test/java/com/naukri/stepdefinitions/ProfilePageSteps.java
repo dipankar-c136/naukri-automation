@@ -1,21 +1,20 @@
 package com.naukri.stepdefinitions;
 
 
-import com.naukri.pages.HomePage;
+import com.naukri.base.BaseTest;
 import com.naukri.pages.ProfilePgae;
-import com.naukri.utils.WebDriverManager;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ProfilePageSteps {
+public class ProfilePageSteps extends BaseTest {
     private ProfilePgae oPP;
 
     public ProfilePageSteps() {
-        WebDriver driver = WebDriverManager.getDriver();
-        oPP = new ProfilePgae(driver);
+        /*WebDriver driver = WebDriverManager.getDriver();
+        oPP = new ProfilePgae(driver);*/
+        oPP = new ProfilePgae(getDriver());
     }
 
     @Then("I should see my profile page")

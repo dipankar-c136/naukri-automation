@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BasePage{
-    private final WebDriver driver;
+    //private WebDriver driver;
 
     public HomePage(WebDriver driver) {
         super(driver);

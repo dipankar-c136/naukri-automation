@@ -1,20 +1,22 @@
 package com.naukri.stepdefinitions;
 
+import com.naukri.base.BaseTest;
 import com.naukri.pages.HomePage;
-import com.naukri.utils.WebDriverManager;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-public class HomePageSteps {
+public class HomePageSteps extends BaseTest {
 
     //private WebDriver driver;
-    private HomePage homePage;
+    private final HomePage homePage;
 
-    public HomePageSteps() {
+    /*public HomePageSteps() {
         WebDriver driver = WebDriverManager.getDriver();
         homePage = new HomePage(driver);
+    }*/
+
+    public HomePageSteps() {
+        homePage = new HomePage(getDriver());
     }
 
     @And("I clicked on the <View Profile> button")
