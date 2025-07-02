@@ -95,6 +95,11 @@
             <artifactId>webdrivermanager</artifactId>
             <version>6.1.0</version>
         </dependency>
+        <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.14.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -130,16 +135,6 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
-                <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.version}</version>
                 <configuration>
@@ -151,11 +146,6 @@
                         <selenium.browser.timeout>60000</selenium.browser.timeout>
                         <webdriver.http.factory>jdk-http-client</webdriver.http.factory>
                     </systemPropertyVariables>
-                    <argLine>
-                        -Xmx1024m
-                        -XX:+HeapDumpOnOutOfMemoryError
-                        -Dfile.encoding=UTF-8
-                    </argLine>
                     <testFailureIgnore>true</testFailureIgnore>
                     <workingDirectory>${project.build.directory}</workingDirectory>
                     <forkCount>1</forkCount>
@@ -164,14 +154,12 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.3</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
                 <configuration>
-                    <includes>
-                        <include>**/TestRunner.java</include>
-                    </includes>
-                    <testFailureIgnore>true</testFailureIgnore>
-                    <workingDirectory>${project.build.directory}</workingDirectory>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
         </plugins>
