@@ -25,8 +25,9 @@ jobs:
         with:
           chrome-version: stable
 
-      - name: Create directories
+      - name: Verify directory structure
         run: |
+          ls -la src/test/resources/features/
           mkdir -p target/{surefire-reports,cucumber-reports,screenshots}
 
       - name: Setup virtual display
@@ -37,8 +38,8 @@ jobs:
 
       - name: Run tests
         run: |
-          mvn -B clean verify \
-            -Dcucumber.features=src/test/resources/features \
+          mvn -B clean test \
+            -Dtest=TestRunner \
             -Dwebdriver.chrome.whitelistedIps="" \
             -Dselenium.browser.timeout=60000 \
             -Dwebdriver.http.factory=jdk-http-client \
@@ -59,6 +60,7 @@ jobs:
             target/cucumber-reports/
             target/screenshots/
           retention-days: 7
+
       - name: Send Email
         if: always()
         uses: dawidd6/action-send-mail@v3.11.0
