@@ -1,0 +1,26 @@
+# Logs
+logs/
+*.log
+
+# Test reports and outputs
+test-reports/
+cucumber-reports/
+surefire-reports/
+test-output/
+extent-test-output/
+
+# Build output
+target/
+build/
+bin/
+
+# IDE files
+.idea/
+*.iml
+.settings/
+.classpath
+.project
+.vscode/
+
+# Personal/test data (remove this line if you want to keep testdata.xlsx in git)
+# src/main/resources/testdata.xlsx
