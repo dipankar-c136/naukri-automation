@@ -1,6 +1,7 @@
 package com.naukri.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,10 +28,19 @@ public class LoginPage extends BasePage {
         this.driver = driver;
     }
 
+    private WebElement waitForElementPresence(By locator, int timeout) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
+        try {
+            return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        } catch (TimeoutException e) {
+            logger.error("Element not found: " + locator.toString(), e);
+            throw e; // Re-throw the exception to fail the test
+        }
+    }
+
     public void enterUsername(String username) {
         //WebElement usernameElement = driver.findElement(usernameField);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement usernameElement = wait.until(ExpectedConditions.presenceOfElementLocated(usernameField));
+        WebElement usernameElement = waitForElementPresence(usernameField, 20);
         usernameElement.clear();
         usernameElement.sendKeys(username);
         logger.info("Entered username: " + username);
@@ -38,8 +48,7 @@ public class LoginPage extends BasePage {
 
     public void enterPassword(String password) {
         //WebElement passwordElement = driver.findElement(passwordField);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement passwordElement = wait.until(ExpectedConditions.presenceOfElementLocated(passwordField));
+        WebElement passwordElement = waitForElementPresence(passwordField, 10);
         passwordElement.clear();
         passwordElement.sendKeys(password);
         logger.info("Entered password: " + password);
@@ -47,9 +56,10 @@ public class LoginPage extends BasePage {
 
     public void clickLoginButton() {
         //driver.findElement(loginButton).click();
+        WebElement loginButtonElement = waitForElementPresence(loginButton, 10);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement loginButtonElement = wait.until(ExpectedConditions.elementToBeClickable(loginButton));
-        loginButtonElement.click();
+        WebElement clickableLoginButton = wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+        clickableLoginButton.click();
         logger.info("Clicked on login button");
     }
 
