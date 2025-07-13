@@ -4,6 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPage extends BasePage {
     private WebDriver driver;
@@ -24,21 +28,28 @@ public class LoginPage extends BasePage {
     }
 
     public void enterUsername(String username) {
-        WebElement usernameElement = driver.findElement(usernameField);
+        //WebElement usernameElement = driver.findElement(usernameField);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement usernameElement = wait.until(ExpectedConditions.presenceOfElementLocated(usernameField));
         usernameElement.clear();
         usernameElement.sendKeys(username);
         logger.info("Entered username: " + username);
     }
 
     public void enterPassword(String password) {
-        WebElement passwordElement = driver.findElement(passwordField);
+        //WebElement passwordElement = driver.findElement(passwordField);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement passwordElement = wait.until(ExpectedConditions.presenceOfElementLocated(passwordField));
         passwordElement.clear();
         passwordElement.sendKeys(password);
         logger.info("Entered password: " + password);
     }
 
     public void clickLoginButton() {
-        driver.findElement(loginButton).click();
+        //driver.findElement(loginButton).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement loginButtonElement = wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+        loginButtonElement.click();
         logger.info("Clicked on login button");
     }
 
