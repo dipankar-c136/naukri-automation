@@ -42,8 +42,7 @@ jobs:
             echo "src/test/resources/features is missing!"
             exit 1
           fi
-      - name:
-        Debug: list resource files
+      - name: list resource files
         run: ls -l src/main/resources/
 
       - name: Run tests
