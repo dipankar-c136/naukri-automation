@@ -14,8 +14,8 @@ public class LoginPage extends BasePage {
     private WebDriver driver;
 
     // Locators
-    private By usernameField = By.id("usernameField");
-    private By passwordField = By.id("passwordField");
+    private By usernameField = By.xpath("//input[@id='usernameField' and @type='text']"); //By.id("usernameField");
+    private By passwordField = By.xpath("//input[@id='passwordField' and @type='password']"); //By.id("passwordField");
     private By loginButton = By.xpath("//button[text()='Login']");
     private By resumeManagementLink = By.id("resumeManagement");
     private By deleteResumeButton = By.id("deleteResume");
