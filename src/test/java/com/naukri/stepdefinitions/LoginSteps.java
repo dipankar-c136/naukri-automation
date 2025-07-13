@@ -49,7 +49,7 @@ public class LoginSteps extends BaseTest {
         /*ExcelUtils excelUtils = new ExcelUtils();
         username = excelUtils.readExcelData("Sheet1", 1, 1); // Assuming username is in the first row, first column
         password = excelUtils.readExcelData("Sheet1", 2, 1); // Assuming password is in the first row, second column*/
-        String excelFilePath = "src/main/resources/testdata.xlsx"; // Update with actual path
+        String excelFilePath = "testdata.xlsx"; // Use only the file name //"src/main/resources/testdata.xlsx"; // Update with actual path
         ExcelUtils excelUtils = new ExcelUtils(excelFilePath);
         String[][] data = excelUtils.readExcelData("Sheet1");
         username = data[0][0]; // First row, first column
