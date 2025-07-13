@@ -1,5 +1,6 @@
 package com.naukri.utils;
 
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -17,7 +18,7 @@ public class ExcelUtils {
         this.excelFilePath = excelFilePath;
     }
 
-    public String[][] readExcelData(String sheetName) throws Throwable {
+    /*public String[][] readExcelData(String sheetName) throws Throwable {
         FileInputStream fileInputStream = new FileInputStream(excelFilePath);
         Workbook workbook = new XSSFWorkbook(fileInputStream);
         Sheet sheet = workbook.getSheet(sheetName);
@@ -35,6 +36,44 @@ public class ExcelUtils {
         workbook.close();
         fileInputStream.close();
         return data;
+    }*/
+    public String[][] readExcelData(String sheetName) throws IOException {
+        try (FileInputStream fileInputStream = new FileInputStream(excelFilePath);
+             Workbook workbook = new XSSFWorkbook(fileInputStream)) {
+
+            Sheet sheet = workbook.getSheet(sheetName);
+            if (sheet == null) {
+                throw new IllegalArgumentException("Sheet '" + sheetName + "' not found");
+            }
+
+            int rowCount = sheet.getPhysicalNumberOfRows();
+            if (rowCount <= 1) {
+                throw new IllegalStateException("Excel file must contain at least header row and one data row");
+            }
+
+            Row headerRow = sheet.getRow(0);
+            if (headerRow == null) {
+                throw new IllegalStateException("Header row is missing");
+            }
+
+            int columnCount = headerRow.getPhysicalNumberOfCells();
+            String[][] data = new String[rowCount - 1][columnCount];
+
+            for (int i = 1; i < rowCount; i++) {
+                Row row = sheet.getRow(i);
+                if (row != null) {
+                    for (int j = 0; j < columnCount; j++) {
+                        Cell cell = row.getCell(j, Row.MissingCellPolicy.RETURN_BLANK_AS_NULL);
+                        data[i - 1][j] = cell != null ? cell.toString() : "";
+                    }
+                } else {
+                    for (int j = 0; j < columnCount; j++) {
+                        data[i - 1][j] = "";
+                    }
+                }
+            }
+            return data;
+        }
     }
 
     public void writeExcelData(String sheetName, String[] data) throws IOException {

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <!-- report theme -->
+        <theme>standard</theme>
+        <!-- title of the document -->
+        <documentTitle>Naukri Automation - Cucumber Framework</documentTitle>
+        <!-- report name - displayed at top-nav -->
+        <reportName>Cucumber Report</reportName>
+        <!-- timestamp format -->
+        <timeStampFormat>MMM dd, yyyy HH:mm:ss</timeStampFormat>
+    </configuration>
+</extentreports>

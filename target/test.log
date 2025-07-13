@@ -1,0 +1,27 @@
+21:38:54.634 [main] INFO  com.naukri.pages.BasePage - Entered username: d.chakraborty1198@gmail.com
+21:38:55.895 [main] INFO  com.naukri.pages.BasePage - Entered password: Naukri@136
+21:38:57.066 [main] INFO  com.naukri.pages.BasePage - Clicked on login button
+21:38:59.180 [main] INFO  com.naukri.pages.BasePage - Title of current page :::
+21:38:59.195 [main] WARN  com.naukri.pages.BasePage - Home page did not load successfully.
+21:39:00.211 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+21:39:00.871 [main] INFO  com.naukri.pages.BasePage - Click on View Profile link
+21:39:00.871 [main] INFO  com.naukri.pages.BasePage - Element clicked successfully in 629 milliseconds.
+21:39:03.892 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+21:39:03.892 [main] INFO  com.naukri.pages.BasePage - Clicked on View Profile link
+21:39:03.923 [main] INFO  com.naukri.pages.BasePage - Title of current page :::Profile | Mynaukri
+21:39:03.939 [main] WARN  com.naukri.pages.BasePage - Profile page is not displayed.
+21:39:04.951 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+21:39:06.269 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+21:39:06.371 [main] INFO  com.naukri.pages.BasePage - Resume delete button clicked.
+21:39:08.394 [main] INFO  com.naukri.pages.BasePage - Static sleep for 2 seconds completed.
+21:39:08.394 [main] INFO  com.naukri.pages.BasePage - Waiting for delete confirmation message to appear...
+21:39:08.410 [main] INFO  com.naukri.pages.BasePage - Delete confirmation message: Are you sure you want to delete the resume?
+21:39:08.410 [main] INFO  com.naukri.pages.BasePage - Clicking on delete confirmation button...
+21:39:11.511 [main] INFO  com.naukri.pages.BasePage - Static sleep for 3 seconds completed.
+21:39:12.528 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+21:39:13.837 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+21:39:13.894 [main] INFO  com.naukri.pages.BasePage - Resume uploaded from: C:\Users\DIPANKAR\Downloads\Naukri_Automation\naukri-automation\src\main\resources\CV_Dipankar_Chakraborty_2025.pdf
+21:39:18.906 [main] INFO  com.naukri.pages.BasePage - Static sleep for 5 seconds completed.
+21:39:19.912 [main] INFO  com.naukri.pages.BasePage - Static sleep for 1 seconds completed.
+21:39:19.943 [main] INFO  com.naukri.pages.BasePage - Resume Headline: Resume headlineeditOneTheme
+Software Quality Engineer with 3 years of experience in Selenium,Python,Cucumber Framework,automation testing,manual testing,functional testing,api testing,regression testing,quality assurance,system testing,agile methodology,QA Automation
