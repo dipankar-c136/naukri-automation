@@ -69,8 +69,8 @@ public class LoginSteps extends BaseTest {
         getDriver().get("https://www.naukri.com/nlogin/login");
         getDriver().manage().window().maximize();
         Thread.sleep(3000);
-        System.out.println(getDriver().getCurrentUrl());
-        System.out.println(getDriver().getPageSource());
+        System.out.println("Current URL is :::" + getDriver().getCurrentUrl());
+        System.out.println("Current page source is :::" + getDriver().getPageSource());
     }
 
     @When("I enter my credentials and login")
