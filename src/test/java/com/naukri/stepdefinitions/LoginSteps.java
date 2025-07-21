@@ -66,7 +66,8 @@ public class LoginSteps extends BaseTest {
         driver.manage().window().maximize(); // Maximize the browser window
         Thread.sleep(3000); // Wait for the page to load*/
 
-        getDriver().get("https://www.naukri.com/nlogin/login");
+        //getDriver().get("https://www.naukri.com/nlogin/login");
+        getDriver().get("https://www.naukri.com/"); // Naukri login URL
         getDriver().manage().window().maximize();
         Thread.sleep(3000);
         System.out.println("Current URL is :::" + getDriver().getCurrentUrl());
