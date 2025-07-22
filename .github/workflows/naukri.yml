@@ -70,6 +70,8 @@ jobs:
             target/surefire-reports/
             target/cucumber-reports/
             target/screenshots/
+            target/page_source_after_login.html
+            target/screenshot_after_login.png
           retention-days: 7
 
       - name: Send Email
