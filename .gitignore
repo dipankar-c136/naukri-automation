@@ -10,7 +10,7 @@ test-output/
 extent-test-output/
 
 # Build output
-target/
+
 build/
 bin/
 
