@@ -61,6 +61,25 @@ public class LoginPage extends BasePage {
         WebElement clickableLoginButton = wait.until(ExpectedConditions.elementToBeClickable(loginButton));
         clickableLoginButton.click();
         logger.info("Clicked on login button");
+        // Wait for possible redirect or error
+        try {
+            Thread.sleep(3000); // Wait for 3 seconds for page to update
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        // Log current URL and title after login attempt
+        logger.info("URL after login attempt: " + driver.getCurrentUrl());
+        logger.info("Title after login attempt: " + driver.getTitle());
+        // Capture page source and screenshot for debugging
+        try {
+            java.nio.file.Files.write(java.nio.file.Paths.get("target/page_source_after_login.html"), driver.getPageSource().getBytes());
+            org.openqa.selenium.OutputType outputType = org.openqa.selenium.OutputType.FILE;
+            org.openqa.selenium.TakesScreenshot ts = (org.openqa.selenium.TakesScreenshot) driver;
+            java.io.File screenshot = (java.io.File) ts.getScreenshotAs(outputType);
+            java.nio.file.Files.copy(screenshot.toPath(), java.nio.file.Paths.get("target/screenshot_after_login.png"), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+        } catch (Exception ex) {
+            logger.error("Failed to write page source or screenshot after login", ex);
+        }
     }
 
     public void navigateToResumeManagement() {
