@@ -26,14 +26,29 @@ public class HomePage extends BasePage{
 
 
     public void clickViewProfile() {
-        staticSleeper(1);
+        /*staticSleeper(1);
         //viewProfileLinkElement.click();
         WebElement profile = driver.findElement(viewProfileLink);
         //profile.click();
         clickElement(driver, profile, "Click on View Profile link", "Failed to click on View Profile link");
         //clickOnElementJS(driver, viewProfileLinkElement, "Click on View Profile link", "Failed to click on View Profile link");
         staticSleeper(3);
-        logger.info("Clicked on View Profile link");
+        logger.info("Clicked on View Profile link");*/
+        try {
+            org.openqa.selenium.support.ui.WebDriverWait wait = new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(20));
+            org.openqa.selenium.WebElement profile = wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(viewProfileLink));
+            clickElement(driver, profile, "Click on View Profile link", "Failed to click on View Profile link");
+            staticSleeper(3);
+            logger.info("Clicked on View Profile link");
+        } catch (org.openqa.selenium.TimeoutException e) {
+            logger.error("View Profile link not found. Capturing page source for debugging.");
+            try {
+                java.nio.file.Files.write(java.nio.file.Paths.get("target/page_source_on_failure.html"), driver.getPageSource().getBytes());
+            } catch (Exception ex) {
+                logger.error("Failed to write page source", ex);
+            }
+            throw e;
+        }
     }
 
     public void verifyHomePageLoaded() {
