@@ -37,7 +37,8 @@ public class HomePage extends BasePage{
         try {
             org.openqa.selenium.support.ui.WebDriverWait wait = new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(20));
             org.openqa.selenium.WebElement profile = wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(viewProfileLink));
-            clickElement(driver, profile, "Click on View Profile link", "Failed to click on View Profile link");
+            //clickElement(driver, profile, "Click on View Profile link", "Failed to click on View Profile link");
+            clickOnElementJS(driver, viewProfileLinkElement, "Click on View Profile link", "Failed to click on View Profile link");
             staticSleeper(3);
             logger.info("Clicked on View Profile link");
         } catch (org.openqa.selenium.TimeoutException e) {
