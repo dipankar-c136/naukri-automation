@@ -21,10 +21,15 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
-      - name: Setup Chrome
-        uses: browser-actions/setup-chrome@latest
-        with:
-          chrome-version: stable
+      #- name: Setup Chrome
+      #  uses: browser-actions/setup-chrome@latest
+      #  with:
+      #    chrome-version: stable
+
+      - name: Setup Chrome with Undetected Driver
+        run: |
+          pip install undetected-chromedriver
+          python -c "import undetected_chromedriver as uc; driver = uc.Chrome()"    
 
       - name: Verify directory structure
         run: |

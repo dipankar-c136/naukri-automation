@@ -72,6 +72,15 @@ public class LoginPage extends BasePage {
         String currentTitle = driver.getTitle();
         logger.info("URL after login attempt: " + currentUrl);
         logger.info("Title after login attempt: " + currentTitle);
+        // Check if CAPTCHA is present and handle it
+        try {
+            if(driver.findElement(By.className("g-recaptcha")).isDisplayed()) {
+                log.warn("CAPTCHA detected - needs manual intervention");
+                // Add logic to handle CAPTCHA
+            }
+        } catch (NoSuchElementException e) {
+            // CAPTCHA not present, proceed with login
+        }
         // Try to log any error message on the login page
         try {
             By errorMsgLocator = By.xpath("//*[contains(@class,'error') or contains(@class,'err') or contains(text(),'incorrect') or contains(text(),'Invalid') or contains(text(),'captcha') or contains(text(),'block')]");
