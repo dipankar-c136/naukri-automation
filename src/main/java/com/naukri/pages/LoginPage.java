@@ -68,8 +68,26 @@ public class LoginPage extends BasePage {
             Thread.currentThread().interrupt();
         }
         // Log current URL and title after login attempt
-        logger.info("URL after login attempt: " + driver.getCurrentUrl());
-        logger.info("Title after login attempt: " + driver.getTitle());
+        String currentUrl = driver.getCurrentUrl();
+        String currentTitle = driver.getTitle();
+        logger.info("URL after login attempt: " + currentUrl);
+        logger.info("Title after login attempt: " + currentTitle);
+        // Try to log any error message on the login page
+        try {
+            By errorMsgLocator = By.xpath("//*[contains(@class,'error') or contains(@class,'err') or contains(text(),'incorrect') or contains(text(),'Invalid') or contains(text(),'captcha') or contains(text(),'block')]");
+            java.util.List<WebElement> errors = driver.findElements(errorMsgLocator);
+            for (WebElement error : errors) {
+                if (error.isDisplayed() && !error.getText().trim().isEmpty()) {
+                    logger.warn("Login error message: " + error.getText().trim());
+                }
+            }
+        } catch (Exception ex) {
+            logger.warn("Could not check for login error messages.", ex);
+        }
+        // Warn if still on login page
+        if (currentUrl.contains("/nlogin/login")) {
+            logger.warn("Login failed: Still on login page after login attempt. Possible CAPTCHA, block, or invalid credentials.");
+        }
         // Capture page source and screenshot for debugging
         try {
             java.nio.file.Files.write(java.nio.file.Paths.get("target/page_source_after_login.html"), driver.getPageSource().getBytes());
