@@ -1,11 +1,14 @@
 package com.naukri.pages;
 
 import com.naukri.base.BaseTest;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 
 public class BasePage extends BaseTest {
@@ -26,6 +29,14 @@ public class BasePage extends BaseTest {
             throw new IllegalStateException("WebDriver is not initialized.");
         }
         return driver;
+    }
+
+    public void takeScreenshot(WebDriver driver, String filename) throws IOException {
+        logger.info("Taking screenshot: " + filename);
+        File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File destFile = new File("logs/Screenshots" + filename + ".png");
+        FileUtils.copyFile(srcFile, destFile);
+        logger.info("Screenshot saved to: " + destFile.getAbsolutePath());
     }
 
     public By element(String IdentifierString, String locateBy) {

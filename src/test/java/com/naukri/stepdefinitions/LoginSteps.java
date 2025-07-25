@@ -70,6 +70,7 @@ public class LoginSteps extends BaseTest {
         //getDriver().get("https://www.naukri.com/"); // Naukri login URL
         getDriver().manage().window().maximize();
         Thread.sleep(3000);
+        loginPage.takeScreenshot(getDriver(), "NaukriLoginPage");
         System.out.println("Current URL is :::" + getDriver().getCurrentUrl());
         System.out.println("Current page source is :::" + getDriver().getPageSource());
     }
@@ -83,6 +84,7 @@ public class LoginSteps extends BaseTest {
         Thread.sleep(1000);
         loginPage.clickLoginButton();
         Thread.sleep(2000); // Wait for login to complete
+        loginPage.takeScreenshot(getDriver(), "NaukriLoginAttempt");
         //loginPage.navigateToResumeManagement();
         //endStep();
     }
