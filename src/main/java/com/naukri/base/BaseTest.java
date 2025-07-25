@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import java.time.Duration;
+import java.util.Arrays;
 
 public class BaseTest {
     protected static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
@@ -20,7 +21,7 @@ public class BaseTest {
             ChromeOptions options = new ChromeOptions();
 
             if (System.getenv("CI") != null) {
-                options.addArguments("--headless=chrome"); // Use chrome headless mode
+                /*options.addArguments("--headless=chrome"); // Use chrome headless mode
                 options.addArguments("--no-sandbox");
                 options.addArguments("--disable-dev-shm-usage");
                 options.addArguments("--disable-gpu");
@@ -31,6 +32,21 @@ public class BaseTest {
                 options.addArguments("--disable-extensions");
                 options.addArguments("--start-maximized");
                 options.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36");
+                 */
+                options.addArguments("--headless=new");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-dev-shm-usage");
+                options.addArguments("--window-size=1920,1080");
+                options.addArguments("--disable-gpu");
+                options.addArguments("--disable-extensions");
+                options.addArguments("--disable-dev-tools");
+                options.addArguments("--ignore-certificate-errors");
+                options.addArguments("--remote-allow-origins=*");
+
+                // Add these to avoid detection
+                options.addArguments("--disable-blink-features=AutomationControlled");
+                options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
+                options.setExperimentalOption("useAutomationExtension", false);
             }
 
             driver.set(new ChromeDriver(options));
