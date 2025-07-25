@@ -29,6 +29,16 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-remote-driver</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
 
         <!-- WebDriverManager -->
         <dependency>
@@ -109,12 +119,6 @@
             </exclusions>
         </dependency>
 
-        <!-- HTTP Client for Selenium 4 -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-http-jdk-client</artifactId>
-            <version>${selenium.version}</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -144,8 +148,6 @@
                         <cucumber.publish.quiet>true</cucumber.publish.quiet>
                         <browser>chrome</browser>
                         <headless>true</headless>
-                        <webdriver.chrome.whitelistedIps/>
-                        <selenium.browser.timeout>60000</selenium.browser.timeout>
                         <webdriver.http.factory>jdk-http-client</webdriver.http.factory>
                     </systemPropertyVariables>
                     <properties>
@@ -155,7 +157,6 @@
                         </property>
                     </properties>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
                 </configuration>
             </plugin>
 
